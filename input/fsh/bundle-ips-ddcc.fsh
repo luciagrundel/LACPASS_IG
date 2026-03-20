@@ -5,7 +5,7 @@ Description: "LACPass Patient Summary Bundle resource. This profile derives from
 
 * ^url = "http://lacpass.racsel.org/StructureDefinition/lac-bundle-ddcc"
 
-// Make use of Composition
+// Make use of Composition-
 * entry[composition].resource 1..1 
 * entry[composition].resource only LAC_Composition_DDCC
 
