@@ -5,7 +5,7 @@ Description: "LACPass Patient Summary Composition resource. This profile derives
 
 * ^url = "http://lacpass.racsel.org/StructureDefinition/lac-composition-ddcc"
 
-// Make use of LAC Patient, LAC Immunization and LAC Organization
+/* // Make use of LAC Patient, LAC Immunization and LAC Organization
 * subject 1..1 MS 
 * subject only Reference(LAC_Patient)
 * section[sectionImmunizations] 1..1
@@ -14,23 +14,9 @@ Description: "LACPass Patient Summary Composition resource. This profile derives
 * custodian 1..1 
 * custodian only Reference(LAC_Organization)
 
+ */
 
-Alias: $loinc = http://loinc.org
-Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
-Alias: $DDCC-Example-Test-CodeSystem = http://worldhealthorganization.github.io/ddcc/CodeSystem/DDCC-Example-Test-CodeSystem
-Alias: $mms = http://id.who.int/icd11/mms
-Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
-Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
-Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
-Alias: $icd-10 = http://hl7.org/fhir/sid/icd-10
-Alias: $sct = http://snomed.info/sct
-Alias: $atc = http://www.whocc.no/atc
-Alias: $standardterms = http://standardterms.edqm.eu
-Alias: $dose-rate-type = http://terminology.hl7.org/CodeSystem/dose-rate-type
-Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
-Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
-
-Instance: LACCompositionExample
+/* Instance: LACCompositionExample
 InstanceOf: LAC_Composition_DDCC
 Usage: #example
 * status = #final
@@ -61,6 +47,8 @@ Usage: #example
 * section[sectionImmunizations].text.status = #generated
 * section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">To be populated at future time</div>"
 * section[sectionImmunizations].entry[immunization] = Reference(LACImmunizationExample)
+ */
+
 
 Instance: 73670837-417b-422f-9f99-46fb28d30985
 InstanceOf: Condition

@@ -1,8 +1,5 @@
-# LACPass IPS
+#  IPS LAC
 
-![LOGO](https://racsel.org/gallery_gen/e02faae0d48126fb295b3badf0f1002f_898x348_fit.png)
-  
-------
 
 This site contains the resources for the FHIR Implementation guide for the project LACPASS - Bien Publico Regional "Transformación Digital en Salud para Mitigar los Efectos de COVID-19 en América Latina y el Caribe".
 

@@ -1,0 +1,14 @@
+{
+  "name" : "minsalud",
+  "type" : "fhir.template",
+  "license" : "CC0-1.0",
+  "description" : "FHIR IG Base Template - foundational for use by anyone",
+  "author" : "http://hl7.org/fhir",
+  "canonical" : "http://fhir.org/templates/fhir.base.template",
+  "version" : "0.1.0",
+  "base": "fhir.base.template",
+  "dependencies": {
+        "fhir.base.template": "current"
+  },
+  "date" : "20230328161536"
+}

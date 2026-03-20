@@ -1,0 +1,19 @@
+{% if site.data.pages[page.path].status or site.data.pages[page.path].fmm %}
+  <table class="{{site.data.pages[page.path].statusclass}}">
+    <tr>
+  {% if site.data.pages[page.path].status %}
+      <td>
+        <i>Estado de los estándares de la página:</i> <a href="{{site.data.fhir.path}}versions.html#std-process" title="Estado del Estándar">{{site.data.pages[page.path].status|capitalize}}</a>
+        {% if site.data.pages[page.path].normativeVersion %}
+          (desde v{{site.data.pages[page.path].normativeVersion}})
+        {% endif %}
+      </td>
+  {% endif %}
+  {% if site.data.pages[page.path].fmm %}
+      <td>
+        <a href="{{site.data.info.fmm-definition}}">Nivel de Madurez</a>: {{site.data.pages[page.path].fmm}}
+      </td>
+  {% endif %}
+    </tr>
+  </table>
+{% endif %}

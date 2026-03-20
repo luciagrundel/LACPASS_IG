@@ -3,23 +3,22 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: racsel.org
-canonical: http://racsel.org
-name: PH4H-RACSEL
-title: Guía CORE PH4H - RACSEL
+id: lacpass.racsel.org
+canonical: http://lacpass.racsel.org
+name: LACPassIPS
+title: LACPass International Patient Summary (IPS) Guide
 # description: Example Implementation Guide for getting started with SUSHI
 status: active # draft | active | retired | unknown
-version: 0.2
+version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
-jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
-  name: RACSEL
-  url: http://racsel.org
-
+  name: Create
+  url: http://lacpapass.create.cl
+  # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
 # package id and the value is the version (or dev/current). For advanced
@@ -87,8 +86,6 @@ menu:
   Artifacts: artifacts.html
   Transactions: transactions.html
   External: additional.html
-  Conectataaton_2026: conectataton2026.html
-  ResumenIG: profiles-description.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
