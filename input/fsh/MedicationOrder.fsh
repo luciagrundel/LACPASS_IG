@@ -1,7 +1,7 @@
 
-Profile: LAC-ServiceRequest
+Profile: LAC-MedicationOrder
 Parent: https://profiles.ihe.net/PHARM/MPD/StructureDefinition-IHEMedicationOrder.html
-Id: lac-service-request
+Id: lac-medication-order
 Description: ""
 
 

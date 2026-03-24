@@ -1,6 +1,5 @@
-Profile: ServiceRequest-RACSEL
+Profile: LAC-ServiceRequest
 Parent: ServiceRequest
-Id: racsel-service-request
+Id: lac-service-request
 Description: ""
 
-https://profiles.ihe.net/PHARM/MPD/StructureDefinition-IHEMedicationOrder.html
