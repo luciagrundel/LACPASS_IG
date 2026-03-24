@@ -3,16 +3,17 @@ Alias: $ICD9CM = http://hl7.org/fhir/sid/icd-9-cm
 Alias: $ICD10 = http://hl7.org/fhir/sid/icd-10
 Alias: $ICD11 = http://id.who.int/icd11/mms
 Alias: $LOINC = http://loinc.org
-Alias: SCT = http://snomed.info/sct
+Alias: $SCT = http://snomed.info/sct
 Alias: $CVX = http://hl7.org/fhir/sid/cvx
-// Alias: $DIVOC = http://worldhealthorganization.github.io/ddcc/DIVOC
+
 Alias: $EUDCC = https://ec.europa.eu/health/documents/community-register/html/
-// Alias: $ICAOV1 = http://worldhealthorganization.github.io/ddcc/ICAOV1
 
-
+Alias: $VS_v2-0203 = http://terminology.hl7.org/ValueSet/v2-0203
 
 Alias: $loinc = http://loinc.org
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+
+
 Alias: $DDCC-Example-Test-CodeSystem = http://worldhealthorganization.github.io/ddcc/CodeSystem/DDCC-Example-Test-CodeSystem
 Alias: $mms = http://id.who.int/icd11/mms
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical

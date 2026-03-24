@@ -85,10 +85,24 @@ dependencies:
 menu:
   Home: index.html
   Artifacts: artifacts.html
-  Transactions: transactions.html
-  External: additional.html
+  Perfiles: profiles.html
+  Continuidad Atención: 
+    "Introducción": ContinuidadAtencionINTRO.html
+    "Perfiles": ContinuidadAtencionPERFILES.html
+    "Transacciones": ContinuidadAtencionTRANSACCIONES.html   
+  Certificados Digitales: 
+    "Introducción": CertificadosDigitalesINTRO.html
+    "Perfiles": CertificadosDigitalesPERFILES.html
+    "Transacciones": CertificadosDigitalesTRANSACCIONES.html   
+  Receta Electrónica: 
+    "Introducción": RecetaElectronicaINTRO.html
+    "Perfiles": RecetaElectronicaPERFILES.html
+    "Transacciones": RecetaElectronicaTRANSACCIONES.html     
   Conectataaton_2026: conectataton2026.html
   ResumenIG: profiles-description.html
+  _Transactions: transactions.html  
+  _External: additional.html
+  Descargas: downloads.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │

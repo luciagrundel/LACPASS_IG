@@ -1,0 +1,10 @@
+
+Profile: LAC-Bundle-ips
+Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips
+Id: lac-bundle-ips
+Description: "Bundle IPS, RACSEL"
+
+// Make use of Composition
+* entry[composition].resource 1..1 
+* entry[composition].resource only LAC_Composition
+

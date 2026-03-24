@@ -1,0 +1,114 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-MiguelPerezUY",
+  "meta": {
+    "profile": [
+      "http://lacpass.racsel.org/StructureDefinition/lac-patient"
+    ]
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PPN",
+            "display": "Passport number"
+          }
+        ],
+        "text": "Passport number"
+      },
+      "system": "urn:oid:2.16.858",
+      "value": "UY/P-1234567890"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "CI",
+            "display": "Cédula de Identidad"
+          }
+        ],
+        "text": "Cédula de Identidad Uruguay"
+      },
+      "system": "urn:oid:2.16.858",
+      "value": "UY/CI-5234567-8"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "text": "Miguel Pérez",
+      "family": "Pérez",
+      "given": [
+        "Miguel"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+598912345678",
+      "use": "mobile"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1975-03-22",
+  "address": [
+    {
+      "use": "home",
+      "text": "Av. 18 de Julio 1234, Apto 5B",
+      "city": "Montevideo",
+      "state": "Montevideo",
+      "postalCode": "11100",
+      "country": "Uruguay"
+    }
+  ],
+  "maritalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+        "code": "M",
+        "display": "Married"
+      }
+    ]
+  },
+  "language": [
+    {
+      "coding": [
+        {
+          "system": "urn:ietf:bcp:47",
+          "code": "es-UY",
+          "display": "Spanish (Uruguay)"
+        }
+      ]
+    }
+  ],
+  "contact": [
+    {
+      "relationship": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+              "code": "E",
+              "display": "Employer"
+            }
+          ]
+        }
+      ],
+      "name": {
+        "text": "Hospital Maciel"
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+598-2-4874480"
+        }
+      ]
+    }
+  ]
+}
