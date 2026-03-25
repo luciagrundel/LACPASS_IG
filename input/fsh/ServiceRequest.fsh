@@ -1,5 +1,6 @@
-Profile: LAC-ServiceRequest
+Profile: LACServiceRequest
 Parent: ServiceRequest
-Id: lac-service-request
-Description: ""
+//Id: lac_service_request
+Description: "Solicitud de Servicio"
 
+//** Este perfil no se deriva de ninguno de IHE*/

@@ -1,7 +1,7 @@
 
-Profile: LAC_Patient
+Profile: LACPatient
 Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips
-Id: lac-patient
+//Id: lac_patient
 Description: "LACPass Patient Summary Patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the patients."
 
 
@@ -69,7 +69,7 @@ List of national identifier types derived from [HL7 v2-0203](http://terminology.
 
 // ------------------------------------------------Example-------------------------------
 Instance: LACPatientExample
-InstanceOf: LAC_Patient
+InstanceOf: LACPatient
 Usage: #example
 
 * identifier[international].use = #official
