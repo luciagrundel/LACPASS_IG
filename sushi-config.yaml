@@ -36,7 +36,7 @@ dependencies:
   hl7.fhir.uv.ips: 1.1.0
   ihe.iti.mhd: 4.2.2
   ihe.pharm.mpd: 1.0.0-comment-2
-  smart.who.int.icvp : 0.2.0
+  #smart.who.int.icvp : 0.2.0
   
 parameters:
   excludettl: true

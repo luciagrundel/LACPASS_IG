@@ -11,13 +11,34 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <h2>{{site.data.pages[page.path].title | escape_once}}</h2>
   {% assign path = page.path | split: '.html' %}
 
+{% capture toc-content %} <!-- white space is critical inside of capture -->
+<div class="markdown-toc" markdown="1">
+{:toc}
+* This will not be displayed
+</div>
+{% include {{path}}.md %}
+{% endcapture %}
+
 {% if page.path == 'index.html' %}
 {% include fragment-igTable.html %}
 {% endif %}
 {% include fragment-pageTable.html %}
 
-<!-- Contenido del archivo markdown -->
+{% capture no-toc-content %} <!-- white space is critical inside of capture -->
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
 {% include {{path}}.md %}
+{% endcapture %}
+
+{% assign teststring  = no-toc-content | markdownify | remove: '###### ' | remove: '##### '| remove: '#### ' | replace: "<h3", "### " | remove_first: '### ' %}
+{% assign h3headers = "### " %}
+
+{% if teststring contains h3headers %}
+    {{ toc-content | markdownify }}
+{% else %}
+    {{ no-toc-content | markdownify }}
+{% endif %}
 
 </div>
 {% include fragment-pageend.html %}

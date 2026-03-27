@@ -15,7 +15,7 @@
 /* Generic settings common to all HL7 IGs */
 
 :root {
-    --stripe-bg-color: #999999;
+    --stripe-bg-color: #004D71; /*#999999;*/
     /* 5. Header strip color */
     --btn-active-color: #430cda;
     /* 7. Menu button active color da0c23 */

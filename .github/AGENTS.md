@@ -56,6 +56,42 @@ para un hospital en Chile, con name, type, telecom y address.
 - Usa identificadores únicos significativos (ej: `Organization-HospitalTest`)
 - Incluye comentarios en JSON para documentar decisiones
 
-## Crear Nuevos Agentes
+---
+
+## 🔍 **Skill: QA & Validación**
+
+**Ubicación**: `.github/skills/qa-validation/SKILL.md`
+
+**Propósito**: Analizar reportes de QA después de generar la IG, priorizar problemas, y planificar correcciones.
+
+**Cuándo usar**:
+- Después de ejecutar `_genonce.bat` o `_gencontinuous.bat`
+- Necesitas entender qué significan los errores/warnings
+- Quieres priorizar qué arreglar primero
+- Buscas documentar decisiones de validación
+
+**Entrada típica**:
+```
+"Revisa el QA report y ayúdame a prioritizar los 48 warnings. Cuáles son críticos?"
+```
+
+**Salida típica**:
+- Análisis de problemas por categoría
+- Matriz de impacto (crítica/alta/media/baja)
+- Plan de acción con pasos específicos
+- Actualización automática de `.github/qa-decisions.md`
+
+**Flujo de trabajo**:
+1. **RECOLECTAR** — Lee `output/qa.txt`, `qa.json` (5 min)
+2. **CLASIFICAR** — Agrupa por tipo de problema (10 min)
+3. **EVALUAR** — Determina impacto y prioridad (10 min)
+4. **DOCUMENTAR** — Actualiza `qa-decisions.md` (5 min)
+5. **REMEDIAR** — Ejecuta correcciones según tipo (variable)
+
+---
+
+## Crear Nuevos Agentes y Skills
 
 Para añadir más agentes, sigue el patrón de `agente1.agent.md` y documenta en este archivo.
+
+Para crear nuevas skills, usa la plantilla en `.github/skills/qa-validation/SKILL.md` como referencia.
