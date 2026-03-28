@@ -1,8 +1,4 @@
-#  IPS LAC
-
-
-T
-### Content
+#  Guía de Implementación de PH4H - Core RACSEL
 
 
 

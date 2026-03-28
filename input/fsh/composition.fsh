@@ -1,6 +1,6 @@
 Profile: LACCompositionIPS
 Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips
-Id: lac-composition-ips
+//Id: lac-composition-ips
 Description: "Patient Summary Composition resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with customizations for the entries to use the profiles defined in this implementation guide."
 
 

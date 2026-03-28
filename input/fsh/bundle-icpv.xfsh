@@ -1,6 +1,0 @@
-Profile: LACBundleIPSICVP
-Parent: http://smart.who.int/icvp/StructureDefinition/Bundle-uv-ips-ICVP  
-//Id: lac-bundle-ips-icvp
-Description: ""
-
-/***https://smart.who.int/icvp/0.2.0/StructureDefinition-Bundle-uv-ips-ICVP.html**/
