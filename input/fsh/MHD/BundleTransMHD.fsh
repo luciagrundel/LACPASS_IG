@@ -4,7 +4,9 @@ Description: "LACPass ITI-65 Minimal Provide Document Transaction. This profile 
 
 
 * entry[FhirDocuments].resource 1..1
-* entry[FhirDocuments].resource only  LACBundleIPS // or LACBundleIPSICVP )
+* entry[FhirDocuments].resource only LACBundleIPS // or LACBundleIPSICVP)
+ //only Reference(Practitioner or Patient)
+
 
 * entry[Patient].resource 1..1
 * entry[Patient].resource only LACPatient

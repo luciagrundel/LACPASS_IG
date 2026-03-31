@@ -24,9 +24,12 @@ dependencies:
   ihe.iti.mhd: 4.2.2
   ihe.pharm.mpd: 1.0.0-comment-2
   smart.who.int.icvp : 0.2.0
-  #smart.who.int.icvp: dev 
-  
-  
+  #smart.who.int.icvp: dev  
+  #ihe.pharm.meow: # Comentado: versión 0.1.0 no está disponible en el registro
+  #  id: ihe.pharm.meow
+  #  uri: https://build.fhir.org/ig/IHE/pharm-meow
+  #  version: 0.1.0 
+
   
 parameters:
   excludettl: true
@@ -39,11 +42,12 @@ menu:
   IPS-ICVP: IPS-ICVP.html
   MHD: MHD.html
   Proximamente:
-    "Receta Electrónica": RecetaElectronica.html
     "Telesalud": Telesalud.html
+    "Receta Electrónica": RecetaElectronica.html
   Resumen: artifacts.html
   Descargas: Descarga.html
-
+  Historial: Historial.html
+  Copyrights: Copyrights.html
 #-------------------------------------------------------------------------------------------------------------
 
 

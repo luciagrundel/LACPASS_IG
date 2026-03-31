@@ -33,19 +33,31 @@ Este documento lista los agentes personalizados disponibles en el proyecto para 
 
 ---
 
-## 🚀 Cómo Usar los Agentes
+## 🚀 Cómo Usar los Agentes y Prompts
 
-### En VS Code
+### Usando Agentes en VS Code
 Abre el chat de Copilot y escribe:
 ```
-@FHIR-JSON-XML-Generator [tu solicitud aquí]
+@[NombreDelAgente] [tu solicitud aquí]
 ```
 
-### Ejemplo Completo
+**Ejemplos**:
 ```
 @FHIR-JSON-XML-Generator Crea un ejemplo valido de recurso Organization 
 para un hospital en Chile, con name, type, telecom y address.
+
+@FSH-Example-Generator Genera un ejemplo FSH para LACPatient, una paciente embarazada 
+de 32 años, nombre 'Gabriela Muñoz', RUT 18.765.432-3
 ```
+
+### Usando Prompts Rápidos
+Abre el chat, escribe `/` y selecciona un prompt:
+```
+/Generar Ejemplos FSH
+/Generar Ideas para IG RACSEL
+```
+
+Los prompts te guían con plantillas y contexto predefinido.
 
 ---
 
@@ -90,8 +102,62 @@ para un hospital en Chile, con name, type, telecom y address.
 
 ---
 
+## 🧬 **FSH-Example-Generator**
+
+**Ubicación**: `.github/agents/fsh-example-generator.agent.md`
+
+**Propósito**: Generar ejemplos de recursos (Instances) directamente en FSH para todos los perfiles de la IG.
+
+**Cuándo usar**:
+- Necesitas crear nuevas instancias de ejemplo en FSH para perfiles
+- Quieres generar casos de uso con datos coherentes
+- Necesitas completar la cobertura de ejemplos de la IG
+- Requieres ejemplos que respeten todas las restricciones del perfil
+
+**Entrada típica**: 
+```
+"Genera un ejemplo FSH para el perfil LACPatient con un paciente chileno de prueba, nombre 'María García', RUT 25.123.456-K"
+```
+
+**Salida típica**:
+- Archivo creado: `input/ejemplos/[NombreInstancia].fsh`
+- Contiene Instance válida en FSH que respeta todas las restricciones del perfil
+
+**Ejemplo**:
+`input/ejemplos/LACPatientPregnancyExample.fsh`:
+```fsh
+Instance: LACPatientPregnancyExample
+InstanceOf: LACPatient
+Usage: #example
+
+* identifier[international].use = #official
+* identifier[international].type = $v2-0203#PPN
+* identifier[international].system = "urn:oid.2.16.152"
+* identifier[international].value = "CL/P19234567"
+
+* identifier[national].system = "urn:oid.2.16.152"
+* identifier[national].type = $v2-0203#DL
+* identifier[national].value = "CL/19.234.567-8"
+
+* active = true
+* name.use = #official
+* name.text = "María González"
+* name.family = "González"
+* name.given = "María"
+* gender = #female
+* birthDate = "1991-03-15"
+```
+
+**Herramientas disponibles**:
+- 📖 Lectura de perfiles FSH
+- ✏️ Edición y creación de archivos `.fsh`
+- 🔍 Búsqueda en el proyecto
+- ⚙️ Ejecución de comandos (SUSHI validación)
+
+---
+
 ## Crear Nuevos Agentes y Skills
 
-Para añadir más agentes, sigue el patrón de `agente1.agent.md` y documenta en este archivo.
+Para añadir más agentes, sigue el patrón de `agente1.agent.md` o `fsh-example-generator.agent.md` y documenta en este archivo.
 
 Para crear nuevas skills, usa la plantilla en `.github/skills/qa-validation/SKILL.md` como referencia.

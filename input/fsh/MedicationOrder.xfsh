@@ -1,6 +1,0 @@
-Profile: LACMedicationOrder
-Parent: https://profiles.ihe.net/PHARM/MPD/StructureDefinition/IHEMedicationOrder
-Description: "Orden de Medicamentos"
-
-
-

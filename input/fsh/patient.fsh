@@ -2,7 +2,7 @@
 Profile: LACPatient
 Parent: http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips
 //Id: lac_patient
-Description: "LACPass Patient Summary Patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the patients."
+Description: "Patient Summary Patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the patients."
 
 
 // identifier slice for nhi
