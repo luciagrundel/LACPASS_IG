@@ -4,7 +4,7 @@ name: "Generar Ejemplos FSH"
 argument-hint: "Nombre del perfil (ej: LACPatient, LACBundleIPS), tipo de caso de uso (ej: paciente adulto, episodio quirúrgico), y características específicas (ej: RUT chileno, alergia a penicilina)"
 ---
 
-Genera ejemplos de recursos FHIR en formato **FSH (FIESTA Shorthand)** para los perfiles de la Implementation Guide LACPASS.
+Genera ejemplos de recursos FHIR en formato **FSH  Shorthand** para los perfiles de la Implementation Guide LACPASS.
 
 ## Contexto
 

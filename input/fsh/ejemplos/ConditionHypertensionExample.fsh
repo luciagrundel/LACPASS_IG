@@ -23,3 +23,5 @@ Description: "Diagnóstico de hipertensión arterial en paciente vacunada"
 * subject = Reference(PatientYellowFeverExample)
 * onsetDateTime = "2018-01-01T00:00:00Z"
 * recordedDate = "2025-01-20T10:00:00Z"
+
+
