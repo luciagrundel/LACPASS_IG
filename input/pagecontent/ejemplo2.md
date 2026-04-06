@@ -26,11 +26,11 @@ BundleTransactionMHDMinimalExample
               └─ Datos demográficos para validación
 ```
 
-**Arquitectura MHD en Capas:**
-- **Layer 1 (Submission):** SubmissionSet (List) - agrupa los DocumentReferences
-- **Layer 2 (Document Metadata):** DocumentReference - metadatos clínicos/administrativos del documento
-- **Layer 3 (Document Content):** Bundle IPS - contenido real del documento
-- **Layer 4 (Subject):** Patient - datos demográficos para validación
+**Arquitectura MHD:**
+- **1 (SubmissionSet):** SubmissionSet (List) - agrupa los DocumentReferences
+- **2 (Document Metadata):** DocumentReference - metadatos clínicos/administrativos del documento
+- **3 (Document Content):** Bundle IPS - contenido real del documento
+- **4 (Subject):** Patient - datos demográficos para validación
 
 ### Bundle IPS Anidado (Documento)
 
@@ -178,25 +178,6 @@ La Composición IPS incluye **4 secciones obligatorias:**
 - ✅ **LACPatient** - Perfil de paciente LAC con identificadores internacionales y nacionales
 - ✅ **LACCompositionIPS** - Composición IPS personalizada para LAC
 
-### Validación
-
-- ✅ Compilación exitosa con SUSHI v3.18.1 (0 errores, 0 advertencias)
-- ✅ Todas las cardinalidades respetadas
-- ✅ Invariantes de paciente cumplidas:
-  - `lac-pat-1`: Solo 1 identificador official
-  - `lac-pat-2`: Sistema de identificador comienza con `urn:oid.2.16.`
-
-### Completitud
-
-- ✅ Identificadores internacionales y nacionales
-- ✅ Datos demográficos completos (nombre, género, fecha de nacimiento)
-- ✅ Información de contacto (teléfono, email)
-- ✅ Dirección con detalles (calle, ciudad, código postal, país)
-- ✅ Datos clínicos realistas y coherentes
-- ✅ Referencias cruzadas consistentes entre recursos
-
----
-
 
 ## 💡 Notas Importantes
 
@@ -217,4 +198,4 @@ La Composición IPS incluye **4 secciones obligatorias:**
 
 ---
 
-Descarga el ejemplo completo en formato JSON: [BundleTransactionMHDMinimalExample.json (Bundle-BundleTransactionMHDMinimalExample.json)
+Descarga el ejemplo completo en formato JSON: [BundleTransactionMHDMinimalExample.json (Bundle-BundleTransactionMHDMinimalExample.json)](BundleTransactionMHDMinimalExample.json)

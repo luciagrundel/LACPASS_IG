@@ -25,7 +25,15 @@ Description: "Ejemplo de Transacción ITI-65 MHD-Minimal: envío de Documento IP
 * entry[SubmissionSet].resource = SubmissionSetMariaGonzalezExample
 
 // ===================================================================
-// ENTRY 1: FhirDocuments - Bundle IPS (Documento Principal)
+// ENTRY 1: DocumentReference - Metadatos del documento IPS
+// ===================================================================
+* entry[DocumentRefs].fullUrl = "urn:uuid:docref-ips-maria-001"
+* entry[DocumentRefs].request.method = #POST
+* entry[DocumentRefs].request.url = "DocumentReference"
+* entry[DocumentRefs].resource = DocumentReferenceMariaGonzalezExample
+
+// ===================================================================
+// ENTRY 2: FhirDocuments - Bundle IPS (Documento Principal)
 // ===================================================================
 * entry[FhirDocuments].fullUrl = "urn:uuid:bundle-ips-maria-001"
 * entry[FhirDocuments].request.method = #POST
@@ -33,7 +41,7 @@ Description: "Ejemplo de Transacción ITI-65 MHD-Minimal: envío de Documento IP
 * entry[FhirDocuments].resource = IPSBundleMariaGonzalezExample
 
 // ===================================================================
-// ENTRY 2: Patient - Patient para validación en MHD
+// ENTRY 3: Patient - Patient para validación en MHD
 // ===================================================================
 * entry[Patient].fullUrl = "urn:uuid:patient-maria-mhd-001"
 * entry[Patient].request.method = #POST
@@ -58,6 +66,36 @@ Description: "SubmissionSet para la transacción MHD - agrupa el documento IPS"
 * extension[sourceId].valueIdentifier.system = "urn:ietf:rfc:3986"
 * extension[sourceId].valueIdentifier.value = "urn:uuid:source-001"
 * entry[0].item = Reference(urn:uuid:bundle-ips-maria-001)
+
+
+// ===================================================================
+// DOCUMENT REFERENCE - Metadatos del documento IPS
+// ===================================================================
+Instance: DocumentReferenceMariaGonzalezExample
+InstanceOf: DocumentReference
+Usage: #inline
+Description: "DocumentReference que contiene metadatos del documento IPS de María González Silva"
+
+* status = #current
+* docStatus = #final
+
+* type.coding.system = "http://loinc.org"
+* type.coding.code = #60591-5
+* type.coding.display = "Patient summary Document"
+
+* subject = Reference(urn:uuid:patient-maria-ips-001)
+* date = 2025-04-04T10:15:00Z
+* author = Reference(urn:uuid:org-health-center-001)
+
+* description = "Documento IPS completo para María González Silva, 57 años, con antecedentes de hipertensión arterial y alergia a penicilina"
+
+// Contenido del documento
+* content[0].attachment.contentType = #application/fhir+json
+* content[0].attachment.title = "IPS Bundle"
+
+// Clasificación de seguridad
+* securityLabel.coding.system = "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+* securityLabel.coding.code = #N
 
 
 // ===================================================================
