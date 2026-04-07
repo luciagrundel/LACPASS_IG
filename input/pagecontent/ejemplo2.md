@@ -1,4 +1,3 @@
-# Ejemplo: BundleTransactionMHDMinimalExample
 
 ## ✅ Descripción General
 
