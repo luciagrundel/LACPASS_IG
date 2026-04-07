@@ -20,12 +20,13 @@ publisher:
 
 
 dependencies:
- # hl7.fhir.uv.ips: 1.1.0
- # hl7.fhir.uv.ips: 2.0
-  hl7.fhir.uv.ips: 2.0.0 
+  hl7.fhir.uv.ips: 2.0.0-ballot
   ihe.iti.mhd: 4.2.2
-#  ihe.pharm.mpd: 1.0.0-comment-2
   smart.who.int.icvp : 0.2.0
+ # hl7.fhir.uv.ips: 2.0.0 
+
+#  ihe.pharm.mpd: 1.0.0-comment-2
+
   #ihe.pharm.meow: # Comentado: versión 0.1.0 no está disponible en el registro
   #  id: ihe.pharm.meow
   #  uri: https://build.fhir.org/ig/IHE/pharm-meow
