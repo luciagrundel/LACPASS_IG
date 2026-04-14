@@ -8,16 +8,15 @@ canonical: http://racsel.org
 name: PH4H-RACSEL
 title: Guía CORE PH4H - RACSEL
 # description: Example Implementation Guide for getting started with SUSHI
-status: active # draft | active | retired | unknown
+status: draft #active # draft | active | retired | unknown
 version: 0.2
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-copyrightYear: 2023+
-releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+copyrightYear: 2026+
+releaseLabel: draft #ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
 publisher:
   name: RACSEL
   url: http://racsel.org
-
 
 dependencies:
   hl7.fhir.uv.ips: 2.0.0-ballot
@@ -44,13 +43,13 @@ menu:
   IPS-LAC: IPS-LAC.html
   IPS-ICVP: IPS-ICVP.html
   MHD: MHD.html
-  Proximamente:
-    "Telesalud": Telesalud.html
-    "Receta Electrónica": RecetaElectronica.html
+  # Proximamente:
+  #   "Telesalud": Telesalud.html
+  #   "Receta Electrónica": RecetaElectronica.html
   Resumen: artifacts.html
-  Descargas: Descarga.html
   Historial: Historial.html
-  Copyrights: Copyrights.html
+  Descargas: Descarga.html  
+  #Copyrights: Copyrights.html
 #-------------------------------------------------------------------------------------------------------------
 
 
