@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LACCompositionIPS",
+  "url": "http://racsel.org/StructureDefinition/LACCompositionIPS",
+  "name": "LACCompositionIPS",
+  "status": "draft",
+  "description": "Patient Summary Composition resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with customizations for the entries to use the profiles defined in this implementation guide.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://racsel.org/StructureDefinition/LACPatient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.custodian",
+        "path": "Composition.custodian",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://racsel.org/StructureDefinition/LACOrganization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

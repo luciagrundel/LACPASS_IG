@@ -1,0 +1,29 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LACList",
+  "url": "http://racsel.org/StructureDefinition/LACList",
+  "name": "LACList",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "List",
+  "baseDefinition": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.SubmissionSet",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "List.subject",
+        "path": "List.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://racsel.org/StructureDefinition/LACPatient"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LACPatient",
+  "url": "http://racsel.org/StructureDefinition/LACPatient",
+  "name": "LACPatient",
+  "status": "draft",
+  "description": "Patient Summary Patient resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the patients.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient",
+        "path": "Patient",
+        "constraint": [
+          {
+            "key": "lac-pat-1",
+            "severity": "error",
+            "human": "A patient can only have a single official identifier",
+            "expression": "Patient.identifier.where(use='official').count() >= 1",
+            "source": "http://racsel.org/StructureDefinition/LACPatient"
+          },
+          {
+            "key": "lac-pat-2",
+            "severity": "error",
+            "human": "The identifier system must be a URN OID",
+            "expression": "Patient.identifier.where(use='official')[0].system.startsWith('urn:oid.2.16.')",
+            "source": "http://racsel.org/StructureDefinition/LACPatient"
+          }
+        ]
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open",
+          "description": "Patient identifier"
+        },
+        "min": 2
+      },
+      {
+        "id": "Patient.identifier:international",
+        "path": "Patient.identifier",
+        "sliceName": "international",
+        "definition": "The international identifier for the patient. The passport number is used.",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:international.use",
+        "path": "Patient.identifier.use",
+        "short": "fixed to official",
+        "min": 1,
+        "fixedCode": "official"
+      },
+      {
+        "id": "Patient.identifier:international.type",
+        "path": "Patient.identifier.type",
+        "short": "Passport number",
+        "min": 1,
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "PPN",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Patient.identifier:international.system",
+        "path": "Patient.identifier.system",
+        "short": "URN OID for the country (ISO-3306 numeric)",
+        "min": 1
+      },
+      {
+        "id": "Patient.identifier:national",
+        "path": "Patient.identifier",
+        "sliceName": "national",
+        "definition": "The national identifier for the patient. Any type different from PPN can be used.",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:national.type",
+        "path": "Patient.identifier.type",
+        "short": "Any type except PPN (Passport number)",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://racsel.org/ValueSet/national-identifier-types"
+        }
+      },
+      {
+        "id": "Patient.identifier:national.system",
+        "path": "Patient.identifier.system",
+        "short": "URN OID for the country (ISO-3306 numeric)",
+        "min": 1
+      }
+    ]
+  }
+}

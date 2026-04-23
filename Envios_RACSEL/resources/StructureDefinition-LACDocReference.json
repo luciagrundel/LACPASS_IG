@@ -1,0 +1,42 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LACDocReference",
+  "url": "http://racsel.org/StructureDefinition/LACDocReference",
+  "name": "LACDocReference",
+  "status": "draft",
+  "description": "LACS - Document Reference RACSEL",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DocumentReference",
+  "baseDefinition": "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DocumentReference.subject",
+        "path": "DocumentReference.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://racsel.org/StructureDefinition/LACPatient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.custodian",
+        "path": "DocumentReference.custodian",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://racsel.org/StructureDefinition/LACOrganization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

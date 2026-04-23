@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "National_Identifier_Type",
+  "id": "national-identifier-types",
+  "title": "National Identifier Types",
+  "description": "List of national identifier types derived from [HL7 v2-0203](http://terminology.hl7.org/ValueSet/v2-0203)",
+  "url": "http://racsel.org/ValueSet/national-identifier-types",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+      }
+    ],
+    "exclude": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "concept": [
+          {
+            "code": "PPN",
+            "display": "Passport number\t"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LACOrganization",
+  "url": "http://racsel.org/StructureDefinition/LACOrganization",
+  "name": "LACOrganization",
+  "status": "draft",
+  "description": "LACPass Patient Summary Organization resource. This profile derives from the [International Patient summary](https://build.fhir.org/ig/HL7/fhir-ips/) with more contraints for the identification of the country of the organization.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Organization-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.address.country",
+        "path": "Organization.address.country",
+        "short": "Must be ISO-3306 2-letter",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-Country2"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "resourceType": "ServiceRequest",
+  /**identificador que corresponde a la traza de la solicitud**/
+  "identifier": [
+    {
+      "system": "https://salud.gub.uy/interconsultas",
+      "value": "UY-PA-2026-998877"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+
+  /** a definir **/
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "103696004"
+        }
+      ],
+      "text": "Derivación a especialista"
+    }
+  ],
+  /**especialidad médica específica a la que se deriva al paciente**/
+
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "308430006"
+      }
+    ],
+    "text": "Dermatología"
+  },
+  /** referencia a un paciente en MPI ?  **/
+  "subject": {
+    "reference": "Patient/paciente-ejemplo",
+    "display": "Juan Pérez"
+  },
+
+/*  desde donde se envía la solicitud **/
+  "requester": {
+    "reference": "Organization/hospital-uy",
+    "display": "Hospital de Clínicas"
+  },
+
+/*  desde donde se envía la solicitud **/
+  "performer": [
+    {
+      "reference": "Organization/pais-panama",
+      "display": "República de Panamá"
+    }
+  ],
+
+  "reasonCode": [
+    {
+      "text": "Evaluación de lesión pigmentada en piel"
+    }
+  ],
+  
+  /*  IPS que respalda la solicitud información adicional que respalda la solicitud **/
+  "supportingInfo": [
+    {
+      "reference": "http://NODO_pais_origen/Bundle/2313",
+      "display": "IPS - Resumen de Historia Clínica"
+    }
+  ],
+  "note": [
+    {
+      "text": "te envio este paciente, para que revises si tiene o no .."
+    }
+  ]
+}

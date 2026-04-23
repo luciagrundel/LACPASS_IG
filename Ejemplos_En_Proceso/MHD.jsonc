@@ -1,0 +1,122 @@
+{
+  "resourceType": "Bundle",
+  "id": "transaccion-respuesta-mhd",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:documentreference-001",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57133-1",
+              "display": "Referral note"
+            }
+          ],
+          "text": "Contra-referencia de Especialidad"
+        },
+        "subject": {
+          "reference": "Patient/paciente-ejemplo"
+        },
+        "date": "2026-04-21T17:35:00-03:00",
+        "author": [
+          {
+            "display": "Especialista Consultor - Panamá"
+          }
+        ],
+        "description": "Respuesta a interconsulta - Caso Dermatología",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/fhir+json",
+              "url": "urn:uuid:bundle-documento-respuesta"
+            }
+          }
+        ],
+        "context": {
+          "related": [
+            {
+              "identifier": {
+                "system": "https://salud.gub.uy/interconsultas",
+                "value": "UY-PA-2026-998877"
+              },
+              "display": "Referencia a Solicitud Original (Traza)"
+            },
+            {
+              "reference": "http://NODO_pais_origen/Bundle/2313",
+              "display": "IPS original utilizado para la evaluación"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "DocumentReference"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bundle-documento-respuesta",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "bundle-respuesta-texto",
+        "type": "document",
+        "timestamp": "2026-04-21T17:30:00-03:00",
+        "entry": [
+          {
+            "fullUrl": "http://ejemplo.org/Composition/comp-resp-simple",
+            "resource": {
+              "resourceType": "Composition",
+              "id": "comp-resp-simple",
+              "status": "final",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "11488-4",
+                    "display": "Consultation note"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "Patient/paciente-ejemplo"
+              },
+              "date": "2026-04-21T17:30:00-03:00",
+              "author": [
+                {
+                  "display": "Especialista Consultor - Panamá"
+                }
+              ],
+              "title": "Respuesta de Interconsulta",
+              "section": [
+                {
+                  "title": "Resultado de la Evaluación",
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://loinc.org",
+                        "code": "55112-7",
+                        "display": "Document summary"
+                      }
+                    ]
+                  },
+                  "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Respuesta Clínica</h3><p>Tras revisar los antecedentes enviados en el Bundle/2313, se concluye que el paciente presenta una dermatitis por contacto. No se observan signos de malignidad. Se recomienda tratamiento tópico.</p></div>"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Bundle"
+      }
+    }
+  ]
+}

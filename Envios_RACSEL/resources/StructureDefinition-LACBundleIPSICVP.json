@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "LACBundleIPSICVP",
+  "url": "http://racsel.org/StructureDefinition/LACBundleIPSICVP",
+  "name": "LACBundleIPSICVP",
+  "status": "draft",
+  "description": "Bundle ICVP RACSEL",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://smart.who.int/icvp/StructureDefinition/Bundle-uv-ips-ICVP",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.entry:composition",
+        "path": "Bundle.entry",
+        "sliceName": "composition"
+      },
+      {
+        "id": "Bundle.entry:composition.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Composition",
+            "profile": [
+              "http://racsel.org/StructureDefinition/LACCompositionICVP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:patient",
+        "path": "Bundle.entry",
+        "sliceName": "patient"
+      },
+      {
+        "id": "Bundle.entry:patient.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "http://racsel.org/StructureDefinition/LACPatient"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
