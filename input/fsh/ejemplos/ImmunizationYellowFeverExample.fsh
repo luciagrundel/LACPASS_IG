@@ -5,9 +5,10 @@ Usage: #example
 Description: "Registro de administración de vacuna contra fiebre amarilla"
 
 * status = #completed
-* vaccineCode.coding.system = "http://snomed.info/sct"
-* vaccineCode.coding.code = #81223
-* vaccineCode.coding.display = "Yellow fever vaccine"
+  	
+* vaccineCode.coding.system = "http://www.whocc.no/atc"
+* vaccineCode.coding.code = #J07BL
+* vaccineCode.coding.display = "Yellow fever vaccines"
 * patient = Reference(PatientYellowFeverExample)
 * occurrenceDateTime = "2025-03-15"
 * primarySource = true

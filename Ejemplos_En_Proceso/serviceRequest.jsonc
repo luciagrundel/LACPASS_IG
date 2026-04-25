@@ -35,7 +35,7 @@
   },
   /** referencia a un paciente en MPI ?  **/
   "subject": {
-    "reference": "Patient/paciente-ejemplo",
+    "reference": "http://MPI_/../Patient/paciente-ejemplo",
     "display": "Juan Pérez"
   },
 

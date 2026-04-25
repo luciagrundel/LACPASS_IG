@@ -154,6 +154,18 @@
         "method": "POST",
         "url": "Bundle"
       }
-    }
+    },
+     {
+      "fullUrl": "urn:uuid:documentreference-final",
+      "resource": {
+        "resourceType": "Patient"
+       
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
   ]
 }

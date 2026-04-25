@@ -43,7 +43,6 @@ widget in sidebar vs in column = uiterlijk op basis van locale class via functio
 Usage:
 var(--publish-box-border); */
 
-
 :root {
 
   --ig-status-text-color: #525252; /* 1. IG Title and status text color */
@@ -623,17 +622,17 @@ h1, h2, h3, h4, h5, h6, .title {
 overflow: visible;
 }
 
-/* Common content for section numbering - DISABLED TO REMOVE HEADING NUMBERS */
+/* Common content for section numbering */
 body{counter-reset:section}
 h2{counter-reset:sub-section}
 h3{counter-reset:composite}
 h4{counter-reset:detail}
 h5{counter-reset:more-detail}
-h2:before{display:none !important;color:silver;counter-increment:section;content:"" !important;}
-h3:before{display:none !important;color:silver;counter-increment:sub-section;content:"" !important;}
-h4:before{display:none !important;color:silver;counter-increment:composite;content:"" !important;}
-h5:before{display:none !important;color:silver;counter-increment:detail;content:"" !important;}
-h6:before{display:none !important;color:silver;counter-increment:more-detail;content:"" !important;}
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) "." counter(section) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 
 /* ============ downloads css ============= */
 

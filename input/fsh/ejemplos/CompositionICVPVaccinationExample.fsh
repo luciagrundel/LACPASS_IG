@@ -26,11 +26,8 @@ Description: "Composición ICVP para certificado de vacunación. Incluye secció
 * section[sectionImmunizations].code.coding.code = #11369-6
 * section[sectionImmunizations].code.coding.display = "Immunizations"
 * section[sectionImmunizations].text.status = #generated
-* section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Registro de vacunación completado incluyendo:</p><ul><li>Fiebre Amarilla - 10/02/2024</li><li>COVID-19 Dosis 1 - 15/05/2023</li><li>COVID-19 Dosis 2 - 20/06/2023</li><li>Rabia (post-exposición) - 22/03/2024</li></ul></div>"
-* section[sectionImmunizations].entry[0] = Reference(ImmunizationYellowFeverICVPExample)
-* section[sectionImmunizations].entry[1] = Reference(ImmunizationCOVID19Dose1ICVPExample)
-* section[sectionImmunizations].entry[2] = Reference(ImmunizationCOVID19Dose2ICVPExample)
-* section[sectionImmunizations].entry[3] = Reference(ImmunizationRabiesICVPExample)
+* section[sectionImmunizations].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Registro de administración de vacuna contra fiebre amarilla</p></div>"
+* section[sectionImmunizations].entry = Reference(ImmunizationYellowFeverExample)
 
 // ===== SECCIÓN PROBLEMAS (VACÍA CON emptyReason) =====
 // Constraint ips-comp-1: Either section.entry or emptyReason are present
