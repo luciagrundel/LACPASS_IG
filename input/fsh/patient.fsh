@@ -66,25 +66,3 @@ List of national identifier types derived from [HL7 v2-0203](http://terminology.
 * ^status = #draft
 * include codes from system $v2-0203
 * exclude $v2-0203#PPN "Passport number	"
-
-// ------------------------------------------------Example-------------------------------
-Instance: LACPatientExample
-InstanceOf: LACPatient
-Usage: #example
-
-* identifier[international].use = #official
-* identifier[international].type = $v2-0203#PPN
-* identifier[international].system = "urn:oid.2.16.152"
-* identifier[international].value = "CL/F12-1234123-2"
-
-* identifier[national].system = "urn:oid.2.16.152"
-* identifier[national].type = $v2-0203#TAX
-* identifier[national].value = "CL/18922652-7"
-
-* active = true
-* name.use = #official
-* name.text = "Sergio Penafiel"
-* name.family = "Penafiel"
-* name.given = "Sergio"
-* gender = #male
-* birthDate = "1994-10-13"
