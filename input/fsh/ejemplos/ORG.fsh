@@ -2,7 +2,7 @@
 // Ubicación: Lima, Perú
 // Identificador: RUC 20123456789
 
-Instance: OrganizationICVPVaccinationExample
+Instance: OrganizationCountryExample
 InstanceOf: LACOrganization
 Usage: #example
 Description: "Centro de Salud Internacional de Lima - Responsable del registro de vacunación ICVP"
@@ -38,3 +38,6 @@ Description: "Centro de Salud Regional que administra la vacuna"
 * address.country = "EC"
 * telecom.system = #phone
 * telecom.value = "+593-2-1234567"
+
+
+

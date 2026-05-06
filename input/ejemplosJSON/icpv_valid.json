@@ -1,0 +1,248 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "identifier": {
+    "system": "urn:oid:2.16.170.1.1.100000000",
+    "value": "IPS-icvp"
+  },
+  "timestamp": "2025-10-12T11:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:a1b2c3d4-e5f6-4789-a1b2-c3d4e5f67890",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "a1b2c3d4-e5f6-4789-a1b2-c3d4e5f67890",
+        "status": "final",
+        "type": {
+          "coding": [
+            { "system": "http://loinc.org", "code": "60591-5", "display": "Patient summary Document" }
+          ]
+        },
+        "subject": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" },
+        "date": "2025-10-12T11:00:00Z",
+        "author": [ { "reference": "urn:uuid:e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01234" } ],
+        "custodian": { "reference": "urn:uuid:c3d4e5f6-a7b8-4901-c3d4-e5f6a7b89012" },
+        "title": "International Patient Summary - Gaby Moreno",
+        "section": [
+          {
+            "title": "Problemas Activos",
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "11450-4", "display": "Problem list" } ] },
+            "text": { "status": "generated", "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Lista de problemas activos del paciente</div>" },
+            "entry": [
+              { "reference": "urn:uuid:d4e5f6a7-b8c9-4012-d4e5-f6a7b8c90123" },
+              { "reference": "urn:uuid:e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01235" }
+            ]
+          },
+          {
+            "title": "Medicación",
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "10160-0", "display": "Medication list" } ] },
+            "text": { "status": "generated", "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Medicamentos activos actuales</div>" },
+            "entry": [
+              { "reference": "urn:uuid:f6a7b8c9-d0e1-4234-f6a7-b8c9d0e12345" },
+              { "reference": "urn:uuid:a7b8c9d0-e1f2-4345-a7b8-c9d0e1f23456" }
+            ]
+          },
+          {
+            "title": "Alergias e Intolerancias",
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "48765-2", "display": "Allergies and adverse reactions" } ] },
+            "text": { "status": "generated", "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Alergias e intolerancias conocidas</div>" },
+            "entry": [ { "reference": "urn:uuid:b8c9d0e1-f2a3-4456-b8c9-d0e1f2a34567" } ]
+          },
+          {
+            "title": "Procedimientos",
+            "code": { "coding": [ { "system": "http://loinc.org", "code": "47519-4", "display": "History of Procedures" } ] },
+            "text": { "status": "generated", "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Procedimientos relevantes realizados</div>" },
+            "entry": [ { "reference": "urn:uuid:c9d0e1f2-a3b4-4567-c9d0-e1f2a3b45678" } ]
+          }
+        ]
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901",
+        "text": { "status": "generated", "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Paciente Gaby Moreno</div>" },
+        "identifier": [
+          {
+            "system": "urn:oid.2.16.591",
+            "type": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/v2-0203", "code": "NI" } ] },
+            "value": "GT098765"
+          },
+          {
+            "use": "official",
+            "type": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/v2-0203", "code": "PPN" } ] },
+            "system": "urn:oid.2.16.591",
+            "value": "GT098765"
+          }
+        ],
+        "name": [ { "use": "official", "family": "Moreno", "given": [ "Gaby" ] } ],
+        "gender": "female",
+        "birthDate": "1981-12-16",
+        "address": [ { "text": "Guatemala", "country": "GT" } ]
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:c3d4e5f6-a7b8-4901-c3d4-e5f6a7b89012",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "c3d4e5f6-a7b8-4901-c3d4-e5f6a7b89012",
+        "name": "Clínica Hospital San Fernando (ID E7F8)",
+        "address": [ { "text": "Via España, Calle 51 y 52, Ciudad de Panamá", "country": "PA" } ]
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:d4e5f6a7-b8c9-4012-d4e5-f6a7b8c90123",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "d4e5f6a7-b8c9-4012-d4e5-f6a7b8c90123",
+        "subject": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" },
+        "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "55464009", "display": "Systemic lupus erythematosus" } ] },
+        "clinicalStatus": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" } ] }
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01235",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01235",
+        "subject": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" },
+        "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "49049000", "display": "Parkinson's disease" } ] },
+        "clinicalStatus": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" } ] }
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:11111111-1111-4111-8111-111111111111",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "11111111-1111-4111-8111-111111111111",
+        "code": {
+          "coding": [
+            { "system": "http://www.whocc.no/atc", "code": "H02AB07", "display": "prednisone" }
+          ],
+          "text": "Prednisone 5 MG Oral Tablet"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:22222222-2222-4222-8222-222222222222",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "22222222-2222-4222-8222-222222222222",
+        "code": {
+          "coding": [
+            { "system": "http://www.whocc.no/atc", "code": "C09CA01", "display": "losartan" }
+          ],
+          "text": "Losartan 50 MG Oral Tablet"
+        }
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:f6a7b8c9-d0e1-4234-f6a7-b8c9d0e12345",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-001",
+        "status": "active",
+        "subject": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" },
+        "medicationReference": { "reference": "urn:uuid:11111111-1111-4111-8111-111111111111" }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a7b8c9d0-e1f2-4345-a7b8-c9d0e1f23456",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-002",
+        "status": "active",
+        "subject": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" },
+        "medicationReference": { "reference": "urn:uuid:22222222-2222-4222-8222-222222222222" }
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:b8c9d0e1-f2a3-4456-b8c9-d0e1f2a34567",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "b8c9d0e1-f2a3-4456-b8c9-d0e1f2a34567",
+        "clinicalStatus": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical", "code": "active" } ] },
+        "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "300916003", "display": "Latex allergy" } ] },
+        "patient": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" }
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:c9d0e1f2-a3b4-4567-c9d0-e1f2a3b45678",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "c9d0e1f2-a3b4-4567-c9d0-e1f2a3b45678",
+        "status": "completed",
+        "subject": { "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901" },
+        "code": { "coding": [ { "system": "http://snomed.info/sct", "code": "113091000", "display": "Magnetic resonance imaging of brain" } ] },
+        "performedDateTime": "2024-07-20"
+      }
+    },
+
+    {
+      "fullUrl": "urn:uuid:e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01234",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01234",
+        "name": [ { "family": "De Obaldía", "given": [ "Isabel" ] } ],
+        "qualification": [
+          { "code": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/v2-0360", "code": "MD", "display": "Doctor of Medicine" } ] } }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6fef12e7-64ad-4792-b2ad-5d6b699588fc",
+      "resource": {
+        "resourceType": "Immunization",
+        "meta": {
+          "profile": [ "http://lacpass.racsel.org/StructureDefinition/lac-immunization" ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Vacuna antipoliomielítica oral (OPV)</div>"
+        },
+        "extension": [ {
+          "url": "http://smart.who.int/pcmt/StructureDefinition/ProductID",
+          "valueCoding": {
+            "system": "http://smart.who.int/icvp/CodeSystem/ICVPProductIds",
+            "code": "PolioVaccineOralOPVTrivaProductfa4849f7532d522134f4102063af1617"
+          }
+        } ],
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://smart.who.int/icvp/CodeSystem/ICVPProductIds",
+              "code": "PolioVaccineOralOPVTrivaProductfa4849f7532d522134f4102063af1617",
+              "display": "Oral poliomyelitis vaccine (OPV)"
+            },
+            {
+              "system": "http://id.who.int/icd/release/11/mms",
+              "code": "XM0N50",
+              "display": "Vacuna para la poliomielitis"
+            }
+          ],
+          "text": "Vacuna antipoliomielítica oral (OPV)"
+        },
+        "patient": {
+          "reference": "urn:uuid:b2c3d4e5-f6a7-4890-b2c3-d4e5f6a78901"
+        },
+        "occurrenceDateTime": "2021-08-09T00:00:00Z",
+        "lotNumber": "123123123",
+        "performer": [ {
+          "actor": {
+            "reference": "urn:uuid:e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01234"
+          }
+        } ]
+      }
+    }
+  ]
+}

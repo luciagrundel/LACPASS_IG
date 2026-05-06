@@ -1,0 +1,10 @@
+Profile: LACBundleTelemedicina
+Parent: Bundle
+Description: "Bundle Telemedicina, RACSEL"
+
+
+* entry[composition].resource 1..1 
+* entry[composition].resource only LACCompositionTelemedicina
+
+* entry[patient].resource 1..1
+* entry[patient].resource only LACPatient
