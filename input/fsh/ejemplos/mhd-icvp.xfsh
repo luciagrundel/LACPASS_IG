@@ -66,11 +66,6 @@ Instance: 987f3197-b863-4c0d-9a0d-75b0ee08d761
 InstanceOf: LACDocReference
 Usage: #inline
 
-* meta.profile[0] = "http://racsel.org/StructureDefinition/LACDocReference"
-* meta.profile[+] = "https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference"
-* meta.security.system = "http://terminology.hl7.org/CodeSystem/v3-ActReason"
-* meta.security.code = #HTEST
-
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>DocumentReference</b>: Resumen IPS de Sergio Penafiel</p></div>"
 
@@ -175,6 +170,12 @@ Usage: #inline
 * section[sectionAllergies].text.status = #generated
 * section[sectionAllergies].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li><b>Alergia</b>: Penicilinas — confirmada, criticidad alta</li></ul></div>"
 
+* section[sectionImmunizations].title = "Inmunizaciones"
+* section[sectionImmunizations].code = $loinc#11369-6 "Immunization history"
+* section[sectionImmunizations].text.status = #generated
+* section[sectionImmunizations].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Inmunizaciones recibidas</div>"
+* section[sectionImmunizations].entry = Reference(urn:uuid:e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01236)
+
 
 // ============================================================
 // PATIENT (inline en IPS Bundle y en la transacción)
@@ -207,87 +208,6 @@ Usage: #inline
 
 
 // ============================================================
-// CONDITION (Problema activo)
-// ============================================================
-
-Instance: 03368859-2b77-44fa-b1b1-9e303e408cc3
-InstanceOf: Condition
-Usage: #inline
-
-* clinicalStatus = $condition-clinical#active
-* verificationStatus = $condition-ver-status#confirmed
-
-* category[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/condition-category"
-* category[0].coding[0].code = #problem-list-item
-* category[0].coding[0].display = "Problem List Item"
-* category[0].coding[+] = $loinc#75326-9 "Problem"
-
-* severity = $loinc#LA6751-7 "Moderate"
-
-* code.coding[0].system = "http://hl7.org/fhir/sid/icd-10"
-* code.coding[0].code = #A00-A09
-* code.coding[0].display = "Intestinal infectious diseases"
-
-* subject = Reference(urn:uuid:d6bf46d8-b0ea-4307-83f8-fcdf36aea951)
-* onsetDateTime = "2015"
-* recordedDate = "2016-10"
-
-
-// ============================================================
-// MEDICATION (Anastrozol)
-// ============================================================
-
-Instance: d5b10a87-63b9-4701-b8c6-11942ccf2d7f
-InstanceOf: Medication
-Usage: #inline
-
-* code.coding[0] = $sct#108774000 "Product containing anastrozole (medicinal product)"
-* code.coding[+] = urn:oid:2.16.840.1.113883.2.4.4.1#99872 "ANASTROZOL 1MG TABLET"
-* code.coding[+] = urn:oid:2.16.840.1.113883.2.4.4.7#2076667 "ANASTROZOL CF TABLET FILMOMHULD 1MG"
-* code.coding[+] = $atc#L02BG03 "anastrozole"
-
-
-// ============================================================
-// MEDICATION STATEMENT
-// ============================================================
-
-Instance: 30375d1f-ee56-4303-bbe0-097cfa5f2f78
-InstanceOf: MedicationStatement
-Usage: #inline
-
-* status = #active
-* medicationReference = Reference(urn:uuid:d5b10a87-63b9-4701-b8c6-11942ccf2d7f)
-* subject = Reference(urn:uuid:d6bf46d8-b0ea-4307-83f8-fcdf36aea951)
-* effectivePeriod.start = "2015-03"
-
-* dosage[0].timing.repeat.count = 1
-* dosage[0].timing.repeat.periodUnit = #d
-* dosage[0].route = $standardterms#20053000 "Oral use"
-* dosage[0].doseAndRate[0].type = $dose-rate-type#ordered "Ordered"
-* dosage[0].doseAndRate[0].doseQuantity = 1 '1' "tablet"
-
-
-// ============================================================
-// ALLERGY INTOLERANCE (Penicilina)
-// ============================================================
-
-Instance: 520fcaa1-1234-40c8-b03f-58ef77c40b13
-InstanceOf: AllergyIntolerance
-Usage: #inline
-
-* clinicalStatus = $allergyintolerance-clinical#active
-* verificationStatus = $allergyintolerance-verification#confirmed
-* type = #allergy
-* category = #medication
-* criticality = #high
-
-* code = $sct#373270004 "Substance with penicillin structure and antibacterial mechanism of action (substance)"
-
-* patient = Reference(urn:uuid:d6bf46d8-b0ea-4307-83f8-fcdf36aea951)
-* onsetDateTime = "2010"
-
-
-// ============================================================
 // ORGANIZATION (Ministerio de Salud de Chile)
 // ============================================================
 
@@ -315,3 +235,19 @@ Usage: #inline
 * name.given = "Beetje"
 * qualification.code.coding.version = "2.7"
 * qualification.code.coding = $v2-0360#MD "Doctor of Medicine"
+
+
+Instance: e5f6a7b8-c9d0-4123-e5f6-a7b8c9d01236
+InstanceOf: Immunization
+Usage: #inline
+* meta.profile = "http://lacpass.racsel.org/StructureDefinition/lac-immunization"
+* extension.url = "http://smart.who.int/pcmt/StructureDefinition/ProductID"
+* extension.valueCoding = $ICVPProductIds#PolioVaccineOralOPVTrivaProductfa4849f7532d522134f4102063af1617
+* status = #completed
+* vaccineCode.coding[0] = $ICVPProductIds#PolioVaccineOralOPVTrivaProductfa4849f7532d522134f4102063af1617 "Oral poliomyelitis vaccine (OPV)"
+* vaccineCode.coding[+] = $mms#XM0N50 "Vacuna para la poliomielitis"
+* vaccineCode.text = "Vacuna antipoliomielítica oral (OPV)"
+* patient = Reference(urn:uuid:d6bf46d8-b0ea-4307-83f8-fcdf36aea951)
+* occurrenceDateTime = "2021-08-09T00:00:00Z"
+* lotNumber = "123123123"
+* performer.actor = Reference(urn:uuid:45271f7f-63ab-4946-970f-3daaaa06637e)

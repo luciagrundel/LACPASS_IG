@@ -1,53 +1,10 @@
-// ===========================================================================================
-// Perfil para el Bundle que contiene la respuesta
-// ===========================================================================================
-
-
-Profile: LACBundleInterconsultaRespuesta
-Parent: Bundle
-Title: "Bundle de Respuesta de Interconsulta"
-Description: "Bundle tipo Document que contiene la Composition de respuesta y los recursos relacionados."
-
-* type = #document (exactly)
-* timestamp 1..1 MS
-
-* type = #document (exactly)
-* timestamp 1..1 MS // La fecha de creación es obligatoria
-
-
-//------Entradas
-* entry MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.description = "Corresponde a cada una de las entradas del Bundle-Document."
-* entry ^slicing.rules = #closed
-* entry.resource MS
-
-
-* entry contains
-    Composition 1..1 and
-    Patient 1..1  
-  
-* entry[Composition] ^short = "Documento Consulta Externa"
-* entry[Composition] ^definition = "Representa un documento de consulta externa del paciente."
-
-* entry[Composition].resource 1..1
-* entry[Composition].resource only LACBundleInterconsultaRespuesta
-
-* entry[Patient] ^short = "Paciente"
-* entry[Patient] ^definition = "Información del paciente"
-* entry[Patient].resource 1..
-* entry[Patient].resource only LACPatient
-
-
-
-
 
 // ===========================================================================================
 // Perfil para el Documento de Respuesta de Interconsulta
 // ===========================================================================================
 
-Profile: LACInterconsultaRespuestaComposition
+
+Profile: LACCompositionIT
 Parent: Composition
 Title: "Perfil de Composition para Respuesta de Interconsulta"
 Description: "Este perfil define la estructura del documento clínico enviado como respuesta a una interconsulta transfronteriza."
@@ -59,11 +16,8 @@ Description: "Este perfil define la estructura del documento clínico enviado co
 * subject only Reference(Patient)
 
 * date MS
-
 * author 1..* MS
-
 * title MS
-
 
 * section 1..* MS
 * section.title 1..1 MS
@@ -71,8 +25,40 @@ Description: "Este perfil define la estructura del documento clínico enviado co
 * section.text 1..1 MS
 
 
+// Slicing de la sección principal
+* section ^slicing.discriminator[0].type = #pattern
+* section ^slicing.discriminator[=].path = "code"
+* section ^slicing.ordered = false
+* section ^slicing.rules = #open
+
+* section contains
+    ResultadoEvaluacion 1..1 MS
 
 
+* section[ResultadoEvaluacion].code = $loinc#55112-7 "Document summary"
+* section[ResultadoEvaluacion].title = "Resultado de la Evaluación"
+* section[ResultadoEvaluacion].text 1..1
+
+// AGREGAR UNA SECCION : 
+
+  /*      "section": [
+          {
+            "title": "Resultado de la Evaluación",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "55112-7",
+                  "display": "Document summary"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Respuesta Clínica</h3><p>Tras revisar los antecedentes enviados en el Bundle/2313, se concluye que el paciente presenta una dermatitis por contacto. No se observan signos de malignidad. Se recomienda tratamiento tópico.</p></div>"
+            }
+          }
+        ] */
 
 
 // ===========================================================================================
