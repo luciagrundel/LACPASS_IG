@@ -79,18 +79,3 @@ Description: "Este perfil define la estructura del documento clínico enviado co
 // ===========================================================================================
 // Ejemplos - instance 
 // ===========================================================================================
-
-// Instance: comp-resp-simple
-// InstanceOf: InterconsultaRespuestaComposition
-// Usage: #inline
-
-// * status = #final
-// * type = http://loinc.org#11488-4 "Consultation note"
-// * subject = Reference(PacienteEjemplo)
-// * date = "2026-04-21T17:30:00-03:00"
-// * author[0].display = "Dra. María García - Especialista Dermatología Panamá"
-// * title = "Respuesta de Interconsulta Transfronteriza"
-// * section[0].title = "Resultado de la Evaluación"
-// * section[0].code = http://loinc.org#55112-7 "Document summary"
-// * section[0].text.status = #generated
-// * section[0].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Respuesta Clínica. Tras revisar los antecedentes enviados, se concluye que el paciente presenta una dermatitis por contacto. No se observan signos de malignidad.</p></div>"

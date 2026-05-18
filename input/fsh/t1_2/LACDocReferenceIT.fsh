@@ -3,7 +3,9 @@
 // =========================================================
 
 Profile: LACDocReferenceIT
-Parent: DocumentReference
+Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
+
+//Parent: DocumentReference
 Title: "DocumentReference para Contra-referencia"
 Description: "Metadatos para el registro y envío de la respuesta de interconsulta."
 

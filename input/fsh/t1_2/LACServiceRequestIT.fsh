@@ -6,7 +6,7 @@
 Profile: LACServiceRequestIT
 Parent: ServiceRequest
 Title: "Perfil de ServiceRequest para Interconsulta Transfronteriza - IT -"
-Description: "Perfil del recurso ServiceRequest adaptado para el flujo de derivaciones entre Uruguay y Panamá, integrando referencias a IPS."
+Description: "Perfil de ServiceRequest para Interconsulta Transfronteriza - IT -, integrando referencias a IPS."
 
 // Restricciones de cardinalidad y Must Support
 * identifier 1..* MS
@@ -20,11 +20,11 @@ Description: "Perfil del recurso ServiceRequest adaptado para el flujo de deriva
 
 * category 1..1 MS
 * category.text 1..1 MS
-* code ^short = "Codigo asociado a  Interconsulta"
+* category ^short = "Código asociado a  Interconsulta"
 
 
 * code 1..1 MS
-* code ^short = "Codigo asociado a  Derivación de especialista."
+* code ^short = "Código asociado a  Derivación de especialista."
 * code.text 1..1 MS
 
 //* code.coding.code = ""
@@ -37,11 +37,11 @@ Description: "Perfil del recurso ServiceRequest adaptado para el flujo de deriva
 
 * requester 1..1 MS
 * requester only Reference(LACOrganization)
-* requester ^short = "Pais-Organización que solicita la interconsulta"
+* requester ^short = "País-Organización que solicita la interconsulta"
 
 * performer 1..1 MS
 * performer only Reference(LACOrganization)
-* performer ^short = "Pais-Organización que realiza la interconsulta"
+* performer ^short = "País-Organización que realiza la interconsulta"
 
 * reasonCode MS
 * reasonCode.text MS
@@ -49,6 +49,7 @@ Description: "Perfil del recurso ServiceRequest adaptado para el flujo de deriva
 * reasonCode ^short = "Motivo de la interconsulta (Ej: Evaluación de lesión sospechosa)"
 
 * supportingInfo MS
+* supportingInfo 1..1
 * supportingInfo only Reference(LACBundleIPS)
 * supportingInfo ^short = "Referencia al IPS que respalda la solicitud"
 
@@ -83,10 +84,12 @@ Description: "Instancia de ejemplo que representa una solicitud de interconsulta
 
 * authoredOn = "2026-05-03T10:00:00-03:00"
 
-* requester = Reference(PaisUruguay)
+//* requester = Reference(PaisUruguay)
+* requester.reference = "Organization/UY"
 * requester.display = "País Uruguay"
 
-* performer = Reference(PaisPanama)
+//* performer = Reference(PaisPanama)
+* performer.reference = "Organization/PA"
 * performer.display = "País Panamá"
 
 * reasonCode.text = "Evaluación de lesión pigmentada en piel (posible melanoma)"
@@ -98,17 +101,17 @@ Description: "Instancia de ejemplo que representa una solicitud de interconsulta
 
 
 
-// =========================================================
-// Recursos de apoyo para que el ejemplo sea válido en Sushi
-// =========================================================
+// // =========================================================
+// // Recursos de apoyo para que el ejemplo sea válido en Sushi
+// // =========================================================
 
 
-Instance: PaisUruguay
-InstanceOf: Organization
-Usage: #example
-* name = "Uruguay"
+// Instance: PaisUruguay
+// InstanceOf: Organization
+// Usage: #example
+// * name = "Uruguay"
 
-Instance: PaisPanama
-InstanceOf: Organization
-Usage: #example
-* name = "Panamá"
+// Instance: PaisPanama
+// InstanceOf: Organization
+// Usage: #example
+// * name = "Panamá"
