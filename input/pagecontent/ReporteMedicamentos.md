@@ -10,7 +10,7 @@
 
 1️⃣. [Generación y Guardado de Reporte] 
 
-> POST >> [BaseServidor] {(LACList , LACDocReferenceIT, LACBundleDocIT, LACPatient)}
+> POST >> [BaseServidor] {(LACList , LACDocReferenceMR, LACBundleDocMR, LACPatient)}
 
 - Perfil Completo MHD **LACBundleTransactionMHDMR** -: [LACBundleTransactionMHDMR](StructureDefinition-LACBundleTransactionMHDMR.html).
 
@@ -21,5 +21,7 @@
 
 
 📌 IMPORTANTE:
-* ...
-* ... 
+* La esctructura de bundle-doc contiene: 
+  - El recurso de tipo **Composition** debe contener un solo recurso de tipo **MedicationStatement**
+  - Perfil de **LAC CompositionMR** -: [LACCompositionMR](StructureDefinition-LACCompositionMR.html).
+  - Perfil de **LAC MedicationStatement** -: [LACMedicationStatement](StructureDefinition-LACMedicationStatement.html).

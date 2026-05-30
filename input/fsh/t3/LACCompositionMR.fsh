@@ -32,15 +32,21 @@ Description: "Este perfil define la estructura del documento clínico enviado co
 * section ^slicing.rules = #open
 
 * section contains
-    Medicamentos 1..1 MS
+    Medicamentos 1..* MS
 
 
 * section[Medicamentos].code = $loinc#55112-7 "Document summary"
 * section[Medicamentos].title = "Medicamentos"
 * section[Medicamentos].text 1..1
-
-// AGREGAR UNA SECCION : 
-
+* section[Medicamentos].text ^short = "Descripción de la sección de medicamentos."
+* section[Medicamentos].entry MS
+* section[Medicamentos].entry ^short = "Entrada de la sección de medicamentos."
+* section[Medicamentos].entry ^definition = "Entrada de la sección de medicamentos, que debe referenciar a un recurso de tipo MedicationStatement."
+//* section[Medicamentos].entry.reference MS
+* section[Medicamentos].entry.reference ^short = "Referencia a un recurso de tipo MedicationStatement que detalla la medicación del paciente."
+//* section[Medicamentos].entry.reference 1..1 MS
+* section[Medicamentos].entry only Reference(LACMedicationStatement)
+//* section[sectionDiagnosticos].entry only Reference($canonicaCondition)
 
 // ===========================================================================================
 // Ejemplos - instance 
