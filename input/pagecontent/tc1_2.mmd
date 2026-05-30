@@ -1,0 +1,69 @@
+sequenceDiagram
+    autonumber
+    
+    actor HIS_A as HIS_Country_A
+    participant Node_A as Node_Country_A
+    participant Node_B as Node_Country_B
+    actor HIS_B as HIS_Country_B
+
+    box Yellow Teleinterconsulta (Médico a Médico)
+    end
+
+    %% Paso 1
+    note over HIS_A, Node_A: Paso 1: Genera Orden
+    activate HIS_A
+    HIS_A->>HIS_A: Crea Orden
+    HIS_A->>Node_A: Persiste ServiceRequest <G>
+    activate Node_A
+    Node_A-->>HIS_A: ACK
+    deactivate Node_A
+    deactivate HIS_A
+
+    %% Paso 2
+    note over Node_A, HIS_B: Paso 2: Respuesta de teleconsulta país B
+    activate HIS_B
+    HIS_B->>Node_B: Revisa ServiceRequest pendientes
+    activate Node_B
+    Node_B->>Node_A: Busca ServiceRequest activas <G>
+    activate Node_A
+    Node_A-->>Node_B: Retorna ServiceRequest
+    deactivate Node_A
+    Node_B->>Node_A: ITI-68: Retrieve IPS_A <G>
+    activate Node_A
+    Node_A-->>Node_B: Retorna IPS_A
+    deactivate Node_A
+    Node_B-->>HIS_B: Envia ServiceRequest + IPS_A
+    deactivate Node_B
+    
+    note right of HIS_B: Evaluación del Especialista
+    HIS_B->>HIS_B: Genera Reporte Clínico
+    HIS_B->>Node_B: ITI-65: Guarda Reporte (Consultation Note) <G>
+    activate Node_B
+    Node_B-->>HIS_B: ACK
+    deactivate Node_B
+    deactivate HIS_B
+
+    %% Paso 3
+    note over HIS_A, Node_B: Paso 3: Visualiza respuesta de teleconsulta país A
+    activate HIS_A
+    HIS_A->>Node_A: Revisa resultados de Reporte
+    activate Node_A
+    Node_A->>Node_B: ITI-67: Busca Reporte (Consultation Note) <G>
+    activate Node_B
+    Node_B-->>Node_A: Retorna Document Reference de Reporte (Consultation Note)
+    deactivate Node_B
+    Node_A->>Node_B: ITI-68: Retrieve Reporte (Consultation Note) <G>
+    activate Node_B
+    Node_B-->>Node_A: Retorna Reporte (Consultation Note)
+    deactivate Node_B
+    Node_A-->>HIS_A: Envia Reporte (Consultation Note)
+    deactivate Node_A
+    
+    HIS_A->>HIS_A: Visualiza Report (Consultation Note)
+    
+    note left of HIS_A: Actualización de Historia Clínica
+    HIS_A->>Node_A: Marca ServiceRequest como completado
+    activate Node_A
+    Node_A-->>HIS_A: ACK
+    deactivate Node_A
+    deactivate HIS_A

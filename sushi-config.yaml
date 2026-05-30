@@ -44,9 +44,7 @@ menu:
   IPS-ICVP: IPS-ICVP.html
   MHD: MHD.html
   Interconsulta-Transfronteriza: InterconsultaTransfronteriza.html
-  # Proximamente:
-  #   "Telesalud": Telesalud.html
-  #   "Receta Electrónica": RecetaElectronica.html
+  Reporte-Medicamentos: ReporteMedicamentos.html
   Resumen: artifacts.html
   Historial: Historial.html
   Descargas: Descarga.html  
