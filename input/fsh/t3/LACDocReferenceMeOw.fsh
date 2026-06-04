@@ -6,11 +6,11 @@ Profile: LACDocReferenceMeOw
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
 
 //Parent: DocumentReference
-Title: "DocumentReference para Contra-referencia"
-Description: "Metadatos para el registro y envío de la respuesta de interconsulta."
+Title: "DocumentReference para Reporte de Medicamentos (MeOw)"
+Description: "Metadatos Reporte de Medicamentos (MeOw)."
 
 * status = #current
-* docStatus = #final
+//* docStatus = #final
 * type = http://loinc.org#56445-0 "Medication summary"
 // "code": "56445-0",
    //           "display": "Medication summary"

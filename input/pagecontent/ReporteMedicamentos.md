@@ -1,4 +1,9 @@
 **Descripción:**
+El propósito es validar la portabilidad de información de medicamentos de una persona,  a partir de un reporte histórico de estos.  Si bien las farmacias podrán leer esta lista de medicamentos, que pueda ser presentada en un país distinto,  se encuentran pendientes los procesos de dispensación y administración de los mismos. 
+
+
+**Escenario:**
+El proceso inicia a partir de un tipo de reporte de medicamentos el cual forma parte de la historia de una persona.  A partir de este reporte, y utilizando su APP, la persona puede seleccionar la información de los medicamentos que decide portar para un viaje trasfronterizo, generando un QR valido con esta información.  Cuando la persona viaja, a otro país puede presentar este QR y la farmacia va a interpretar la lista de medicamentos seleccionados que forman parte de su historia.
 
 
 **Perfiles y Proceso**

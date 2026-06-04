@@ -1,23 +1,34 @@
 
 
 @ECHO OFF
+SETLOCAL EnableDelayedExpansion
 SET publisher_jar=publisher.jar
 SET input_cache_path=%CD%\input-cache
+SET ig_ini=%CD%\ig.ini
+SET txserver=https://tx.fhir.org/r4
+SET txmode=online
 
-ECHO Checking internet connection...
-PING tx.fhir.org -4 -n 1 -w 1000 | FINDSTR TTL && GOTO isonline
-ECHO We're offline...
-SET txoption=-tx n/a
-GOTO igpublish
+REM Lee configuracion desde ig.ini (si existe)
+IF EXIST "%ig_ini%" (
+	FOR /F "tokens=1,* delims==" %%A IN ('findstr /R /C:"^[ ]*tx-server[ ]*=" "%ig_ini%"') DO SET "txserver=%%B"
+	FOR /F "tokens=1,* delims==" %%A IN ('findstr /R /C:"^[ ]*tx-mode[ ]*=" "%ig_ini%"') DO SET "txmode=%%B"
+)
 
-:isonline
-ECHO We're online - checking HTTP connectivity...
-curl -s --max-time 5 http://tx.fhir.org/r4/metadata >nul 2>&1
-IF ERRORLEVEL 1 (
-    ECHO tx.fhir.org HTTP timeout - using offline mode
-    SET txoption=-tx n/a
+REM Trim basico de espacios iniciales
+FOR /F "tokens=*" %%A IN ("%txserver%") DO SET "txserver=%%A"
+FOR /F "tokens=*" %%A IN ("%txmode%") DO SET "txmode=%%A"
+
+REM Permite sobreescribir el servidor de terminologia desde entorno
+IF NOT "%FHIR_TX_SERVER%"=="" SET txserver=%FHIR_TX_SERVER%
+IF NOT "%FHIR_TX_MODE%"=="" SET txmode=%FHIR_TX_MODE%
+
+IF /I "%txmode%"=="offline" (
+	ECHO Terminology mode: offline ^(-tx n/a^)
+	SET txoption=-tx n/a
 ) ELSE (
-    SET txoption=
+	ECHO Terminology mode: online
+	ECHO Terminology server: %txserver%
+	SET txoption=-tx %txserver%
 )
 
 :igpublish

@@ -6,8 +6,8 @@
 
 Profile: LACCompositionMeOw
 Parent: Composition
-Title: "Perfil de Composition para Respuesta de Interconsulta"
-Description: "Este perfil define la estructura del documento clínico enviado como respuesta a una interconsulta transfronteriza."
+Title: "Perfil de Composition para Reporte de Medicamentos (MeOw)"
+Description: "Este perfil define la estructura del documento clínico enviado como reporte de medicamentos transfronterizo - MeOw.   "
 
 * status = #final
 * type = http://loinc.org#56445-0 "Medication summary"
