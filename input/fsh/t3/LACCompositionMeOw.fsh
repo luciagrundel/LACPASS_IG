@@ -4,7 +4,7 @@
 // ===========================================================================================
 
 
-Profile: LACCompositionMR
+Profile: LACCompositionMeOw
 Parent: Composition
 Title: "Perfil de Composition para Respuesta de Interconsulta"
 Description: "Este perfil define la estructura del documento clínico enviado como respuesta a una interconsulta transfronteriza."
@@ -45,7 +45,7 @@ Description: "Este perfil define la estructura del documento clínico enviado co
 //* section[Medicamentos].entry.reference MS
 * section[Medicamentos].entry.reference ^short = "Referencia a un recurso de tipo MedicationStatement que detalla la medicación del paciente."
 //* section[Medicamentos].entry.reference 1..1 MS
-* section[Medicamentos].entry only Reference(LACMedicationStatement)
+* section[Medicamentos].entry only Reference(LACMedicationStatementMeOw)
 //* section[sectionDiagnosticos].entry only Reference($canonicaCondition)
 
 // ===========================================================================================

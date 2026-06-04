@@ -2,7 +2,7 @@
 // PERFILES PARA TRANSACCIÓN DE RESPUESTA (MHD)
 // =========================================================
 
-Profile: LACDocReferenceMR
+Profile: LACDocReferenceMeOw
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
 
 //Parent: DocumentReference
@@ -22,7 +22,7 @@ Description: "Metadatos para el registro y envío de la respuesta de interconsul
 * author 1..* MS
 * content.attachment.contentType = #application/fhir+json
 * context.related MS
-* context.related ^short = "Referencia a la solicitud original (Traza) y al IPS de soporte"
+* context.related ^short = "Contiene el Documento reporte de medicamentos, Bundle-Document MeOw."
 
 // // =========================================================
 // // INSTANCIA DE TRANSACCIÓN (EJEMPLO COMPLETO)

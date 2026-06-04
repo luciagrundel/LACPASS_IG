@@ -1,9 +1,8 @@
 Alias: $SCT = http://snomed.info/sct
 
-Profile: LACMedicationStatement
+Profile: LACMedicationStatementMeOw
 Parent: MedicationStatement
-
-Title: "Perfil para Completar la medicación en el informe."
+Title: "LACMedicationStatementMeOw."
 //Description: "Metadatos para el registro y envío de la respuesta de interconsulta."
 
 //---paciente

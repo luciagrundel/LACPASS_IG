@@ -3,7 +3,7 @@
 // ===========================================================================================
 
 
-Profile: LACBundleDocMR
+Profile: LACBundleDocMeOw
 Parent: Bundle
 Title: ""
 Description: "."
@@ -29,7 +29,7 @@ Description: "."
 * entry[Composition] ^definition = "Representa un documento de consulta externa del paciente."
 
 * entry[Composition].resource 1..1
-* entry[Composition].resource only LACCompositionMR
+* entry[Composition].resource only LACCompositionMeOw
 
 * entry[Patient] ^short = "Paciente"
 * entry[Patient] ^definition = "Información del paciente"
